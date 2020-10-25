@@ -1,4 +1,4 @@
-package com.panda.user.server.domain.security.service;
+package com.panda.user.server.infrastructure.util.entity;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
