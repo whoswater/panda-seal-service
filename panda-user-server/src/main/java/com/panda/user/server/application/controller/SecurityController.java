@@ -28,10 +28,12 @@ public class SecurityController {
     @ApiOperation(value = "图片验证码 验证码文字存放于session")
     @RequestMapping(value = "/image/verification_code", method = RequestMethod.GET)
     public void checkCode(HttpServletRequest request, HttpServletResponse response,
-                          @ApiParam(value = "验证码图片宽度") @RequestParam(value = "type", required = false, defaultValue =
-                                  "10") int weight,
-                          @ApiParam(value = "验证码图片高度") @RequestParam(value = "type", required = false, defaultValue =
-                                  "40") int height) {
+                          @ApiParam(value = "验证码图片宽度", example = "10") @RequestParam(value = "type", required = false,
+                                  defaultValue =
+                                          "10") int weight,
+                          @ApiParam(value = "验证码图片高度", example = "40") @RequestParam(value = "type", required = false,
+                                  defaultValue =
+                                          "40") int height) {
         
         ImageVerificationCode ivc = securityService.getImageVerificationCode(weight, height);
         BufferedImage image = ivc.getImage();
